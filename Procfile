@@ -1,0 +1,1 @@
+web gunicorn whatsapptext.wsgi:application --log-file -

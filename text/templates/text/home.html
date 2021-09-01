@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Send messages!
+{% endblock title %}
+
+{% block content %}
+<div class="form-class">
+<form action="{% url 'send-view' %}" method="post" class="ui form">
+	{% csrf_token %}
+ 
+    <div class="seven wide field">
+      <input type="text" placeholder="Phone Number" name="phone">
+    </div>
+     <div class="field">
+      <div class="">
+        <label>Make sure to add country code before the Phone Number.</label>
+      </div>
+    </div>
+    <div class="seven wide field">
+      <input type="text" placeholder="Hour Ex: (0 - 23)" name="hour">
+    </div>
+    <div class="seven wide field">
+      <input type="text" placeholder="Minute Ex: (0-59)" name="minute">
+    </div>
+    <div class="seven wide field">
+     <div class="field">
+	    <label>Message</label>
+	    <textarea name="message"></textarea>
+	 </div>
+	</div>
+ 
+  <button type="submit" class="ui primary button send-btn">Send message</button>
+</form>
+<div class="sending">
+ <div class="ui segment">
+  <div class="ui active dimmer">
+    <div class="ui medium text loader">We'll send them message at defined time.</div>
+  </div>
+  <p>vebaernebaea</p>
+  <p>berqrenntn</p>
+</div>
+  </div>
+{% endblock content %}
+
+
+
+
+{% block scripts %}
+<script>
+  $(document).ready(function(){
+
+    $(".sending").hide();
+
+     $(".send-btn").click(function(){
+
+      console.log("working")
+      $(".sending").show();
+      
+      })
+
+  })
+  
+ 
+
+</script>
+{% endblock scripts %}

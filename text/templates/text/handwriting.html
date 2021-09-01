@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Convert text into handwritten format
+{% endblock title %}
+
+{% block content %}
+<form action="{% url 'hand-convert' %}" method="post" class="ui form">
+	{% csrf_token %}
+    <div class="seven wide field">
+     <div class="field">
+	    <label>Enter text you want to convert:</label>
+	    <textarea name="message"></textarea>
+	 </div>
+	</div>
+  <button type="submit" class="ui primary button">Convert Text</button>
+
+</form>
+{% endblock content %}
