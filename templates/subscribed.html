@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if exists %}
+
+
+<div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+  <p class="font-bold">You have already subscribed to us! Cheers!</p>
+  <p>You'll get an email from us every Friday!.</p>
+</div>
+
+{% else %}
+
+
+<div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+  <p class="font-bold">Thank You for subscribing our newsletter!</p>
+  <p>You'll get an email from us every Friday!.</p>
+</div>
+
+
+
+
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Fast way to send emails!
+{% endblock title %}
+
+{% block content %}
+<div class="ui grid">
+  <div class="row">
+    <div class="ten wide column">
+      <form action="{% url 'send-email' %}" method="post" class="ui form" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  <div class="seven wide field">
+     <div class="field">
+      <label>Enter subject for emails:</label>
+     <input type="text" placeholder="Ex: Regarding internship program..." name="subject">
+   </div>
+  </div>
+
+
+  <div class="seven wide field">
+     <div class="field">
+      <label>Enter HTML content for emails:</label>
+      <textarea name="html_content" rows="10" cols="50"></textarea>
+   </div>
+  </div>
+
+  <button type="submit" class="ui primary button send-btn">Send Emails</button>
+
+</form>
+
+<div class="sending">
+ <div class="ui segment">
+  <div class="ui active dimmer">
+    <div class="ui medium text loader">We'll send them message at defined time.</div>
+  </div>
+  <p>vebaernebaea</p>
+  <p>berqrenntn</p>
+</div>
+  </div>
+    </div>
+    <div class="six wide column">
+      <h2>Subscribe our news letter </h2>
+      <br>
+        <form action="{% url 'subscribe' %}" method="post" class="ui form" enctype="multipart/form-data">
+          {% csrf_token %}
+
+          <div class="seven wide field">
+             <div class="field">
+              <label>Enter your email:</label>
+             <input type="text" placeholder="tushar@gmail.com" name="email">
+           </div>
+          </div>
+
+          <button type="submit" class="ui positive button">Subscribe</button>
+
+        </form>
+        {% if create %}
+          <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
+            <div class="flex">
+              <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
+              <div>
+                <p class="font-bold">Our privacy policy has changed</p>
+                <p class="text-sm">Make sure you know how these changes affect you.</p>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+    </div>
+  </div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script>
+  $(document).ready(function(){
+
+    $(".sending").hide();
+
+     $(".send-btn").click(function(){
+
+      console.log("working")
+      $(".sending").show();
+      
+      })
+
+  })
+  
+ 
+
+</script>
+{% endblock scripts %}

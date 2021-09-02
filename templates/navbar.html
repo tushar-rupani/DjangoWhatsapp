@@ -1,16 +1,13 @@
 
-<div class="ui inverted menu nav mb-7">
-  <div class="ui container">
-    <a href="" class="item">        
-        <h3>WhatMessage</h3>
-    </a>  
-    </div>
 
-     <div class="ui container">
-    <a href="{% url 'hand-view' %}" class="item">        
-        <h3>Handwriting</h3>
-    </a>  
-    </div>
 
+<nav class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white shadow sm:items-baseline w-full" class="text-primary">
+  <div class="mb-2 sm:mb-0">
+    <a href="{% url 'home-view' %}" class="text-2xl no-underline text-grey-darkest hover:text-blue-dark">WhatMessage</a>
   </div>
-</div>
+  <div>
+    <a href="{% url 'hand-view' %}" class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">Handwriting</a>
+    <a href="{% url 'email' %}" class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">Send Emails</a>
+    <a href="/three" class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">Three</a>
+  </div>
+</nav>
